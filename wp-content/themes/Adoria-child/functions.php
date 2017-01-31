@@ -486,15 +486,6 @@ function the_breadcrumb() {
     echo "</div>";
 }
 
-add_action('wp_loaded', 'buffer_start');    function buffer_start() { ob_start("myy_callback"); }
-add_action('shutdown', 'buffer_end');       function buffer_end()   { ob_end_flush(); }
-
-function myy_callback($buffer) {
-  // modify buffer here, and then return the updated code
-  $buffer = str_replace('http://adoriasoft.dev.adoriasoft.org','http://adoriasoft.loc',$buffer);
-  return $buffer;
-}
-
 add_filter('the_content', 'lazyLoadImg');
 function lazyLoadImg( $output ){
     $dom = new DOMDocument('1.0','utf-8');
