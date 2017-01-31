@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="en" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="en" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery cssbipolarchart Plugin Demos</title>
+   <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css">
+    <link rel="stylesheet" href="cssBipolarChart.css">
+<style>
+body { background-color:#fafafa; font-family:'Roboto';}
+</style>
+
+</head>
+
+<body class="">
+<div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="http://www.jqueryscript.net/chart-graph/Animated-Bipolar-Bar-Chart-Plugin-With-jQuery-cssbipolarchart.html">Download This Plugin</a></li>
+<li><a href="http://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+    <div class="row" style="margin-top:150px;">
+        <div class="column align-self-middle">
+        <div id="demo1">
+        <h1>jQuery cssbipolarchart Plugin Demos</h1>
+          <div class="how-to">
+            <h5>Demo 1</h5>
+            <hr>
+<pre><code>$("#example1").drawCSSBipolarChart({
+          data: sampleData1,
+          bipolar: true
+})</code></pre>
+            <br>
+            <p>Data Format:</p>
+<pre><code>[
+  ["left label 1", "right label 1", 0.3],
+  ["left label 2", "right label 2", 0.4]
+]
+</code></pre>
+</div>
+<br><br>
+            <div id="example1">
+            </div>
+</div>
+<br><br><br>
+<div id="demo2">
+  <div class="how-to">
+            <h5>Demo 2</h5>
+            <hr>
+<pre><code>$("#example1").drawCSSBipolarChart({
+        data: sampleData1,
+        bipolar: true
+})</code></pre>
+<p>Data Format:</p>
+<pre><code>[
+["left label 1", 0.3],
+["left label 2", 0.4]
+]
+</code></pre>
+  </div>
+            <br>
+            <div id="example2">
+            </div>
+</div>
+        </div>
+    </div>
+
+
+
+    <!-- scripts -->
+    <script src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="cssBipolarChart.js"></script>
+
+    <script>
+        var sampleData1 = [
+            ["Conservative and Traditional", "Liberal and Artistic", 0.6625392409386361],
+            ["Impulsive and Spontaneous", "Organized and Hard Working", 0.4771745931633382],
+            ["Contemplative", "Engaged with outside world", 0.06852020443012857],
+            ["Competitive", "Team working and Trusting", 0.5242589938711448],
+            ["Laid back and Relaxed", "Easily Stressed and Emotional", 0.02308082639082526]
+        ]
+
+        var sampleData2 = [
+            ["Psychology", 0.4022950506000479],
+            ["IT", 0.98803218276815504],
+            ["Art", 0.44972130092387308],
+            ["Education", 0.32488360210830012],
+            ["Finance", 0.6332471672578724],
+        ]
+
+        $(document).ready(function() {
+            $("#example1").drawCSSBipolarChart({
+                data: sampleData1,
+                bipolar: true
+            })
+
+            $("#example2").drawCSSBipolarChart({
+                data: sampleData2,
+                simpleBar: true
+            })
+        })
+    </script>
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>
