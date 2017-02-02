@@ -48,6 +48,35 @@ color:#545454
 body .modal-backdrop{
   background: rgba(0,0,0,0.7);
 }
+header{
+  .blackLine{
+    background: #2b2b2b;
+    color: #fff;
+    .container{
+      display: flex;
+      justify-content: flex-end;
+    }
+    a{
+      color: #fff;
+      display: inline;
+      &:hover{
+        color: #23c0f1;
+        text-decoration: none;
+      }
+    }
+    i{
+      font-size: 20px;
+      padding-right: 5px;
+      &:before{
+        position: relative;
+        top: 2px;
+      }
+    }
+    .topContact{
+      padding: 7px 0 7px 15px;
+    }
+  }
+}
 img.loadingImg{
   background: url(/wp-content/themes/Adoria-Child/images/loader.gif) no-repeat;
   background-position: center;
@@ -71,12 +100,29 @@ h3.one_post_cat {
 .one_post_image{
   margin-bottom: 20px;
 }
-.slideTitle{
-  color:#fff;
-}
-.slideContent{
-  color:#ccc;
-  font-size: 16px;
+.sliderContentWrapper{
+  padding: 60px 0 0 40px;
+  .slideTitle{
+    color:#fff;
+    font-size: 40px;
+  }
+  .slideContent{
+    color:#c6ccd8;
+    font-size: 16px;
+    padding: 15px 0;
+  }
+  .btn-learn-more{
+    padding-left: 0;
+    font-size: 16px;
+    margin-top: 10px;
+    i {
+      font-size: 24px;
+      &:before{
+        position: relative;
+        top: 3px; 
+      }
+    }
+  }
 }
 body {
   padding: 0;
@@ -199,14 +245,26 @@ body {
   padding: 25px;
   position: relative;
 }
+@media screen and (max-height: 1023px){
 .slider-home-page{
-  min-height: calc(100vh - 137px);
-  .text-uppercase.h4{
-    display: block;
-    padding: $padding-panel-container 0;
-    font-size: 22px;
+  height: auto;
+      .text-uppercase.h4{
+        display: none;
+      }
+      img.arrowDown{
+        display: none;
+      }
+    }
   }
-   img.arrowDown{
+ @media screen and (min-height: 1024px){
+  .slider-home-page{
+    min-height: calc(100vh - 137px);
+      .text-uppercase.h4{
+        display: block;
+        padding: $padding-panel-container 0;
+        font-size: 22px;
+      }
+    img.arrowDown{
       opacity: 0.5;
       animation: MoveUpDown 2s linear infinite;
       margin-top: 50px;
@@ -214,15 +272,9 @@ body {
       left: 0;
       bottom: 0;
     }
-}
-@media screen and (max-width: 1024px){
-  .slider-home-page{
-  min-height: calc(100vh - 137px);
-    .text-uppercase.h4{
-      display: none;
-    }
   }
 }
+  
 @keyframes MoveUpDown {
   0 {
     bottom: 0;
@@ -236,10 +288,10 @@ body {
 }
 .footer-body {
   background: $footer-background;
-  color: $white;
+  color: #c2c4c6;
 
   a {
-    color: $white;
+    color: #c2c4c6;
   }
 
   a:hover {
@@ -906,7 +958,15 @@ body .social{
 .dropdown-menu > li.kopie > a {
     padding-left:5px;
 }
- 
+.dropdown ul.dropdown-menu{
+  visibility: hidden;
+  display: block;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-out 0.5s;
+  -moz-transition: all 0.2s ease-out 0.5s;
+  -o-transition: all 0.2s ease-out 0.5s;
+  transition: all 0.2s ease-out 0.5s;
+}
 .dropdown-submenu {
     position:relative;
 }
@@ -938,6 +998,18 @@ body .social{
       color: #23c0f1;
 }  
   li.dropdown {position: static; float:right}
+.navbar-form {
+    form{
+      position: relative;
+      top: 4px;
+    }
+  }
+body div.wpcf7-response-output {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin: 25px 0 0;
+  }
 @media (max-width: 767px) {
 
   .navbar-nav  {
@@ -986,6 +1058,10 @@ body .social{
     margin: 0;
     padding: 0;
     text-align: center;
+    form{
+      position: relative;
+      top: 4px;
+    }
 	} 
 	.hidden-xs{
     display: none!important;
@@ -1008,8 +1084,10 @@ body .social{
  
 @media (min-width: 768px) {
   ul.nav li:hover > ul.dropdown-menu {
-    display: block;
+  display: block;
 	text-align: center;
+  visibility: visible;
+  opacity: 1;
 }
 	.navbar-nav { 
 	li { 
@@ -1129,21 +1207,28 @@ footer  {
 	i.fa {
     font-size: 20px;}
 	.socials {
+  color: #c2c4c6;
 	margin-bottom: 25px;
 	i.fa{
 	padding:10px;
+  color: #c2c4c6;
 	&:hover {
 	color:#23c0f1;
 	}
 	}
 	}
+
 	button.btn.btn-footer {
 	background-color: transparent;
-    border: 2px solid #fff;
+  border: 2px solid #c2c4c6;
 	margin-bottom: 25px;
+  color: #c2c4c6;
+  padding: 6px 35px;
+  letter-spacing: 1px;
+  float: right;
 	&:hover {
 	background-color: #eeeeee;
-	color:#2f2f2f;
+	color:#23c0f1;
 	}
 	}
 }
@@ -1306,6 +1391,7 @@ p.empl_sign {
     border-bottom: 3px solid #23c0f1;
     padding: 0px;
     margin-bottom: 55px;
+    position: relative;
 }
 .input_field br{
   display: none;
@@ -1340,6 +1426,9 @@ p.empl_sign {
     color: #fff;
 
 }
+.text-uppercase {
+  text-transform: uppercase;
+}
 #loadMore{
   display:none;
 }
@@ -1362,12 +1451,18 @@ span.project_details input[type=text]{
   display: inline-block;
   width: 45%;
   text-align: right;
+  padding-right: 30px;
 }
+.subm_btn {
+  padding:0;
+  float: left;
+  width: 100%;
+} 
 .mail_form subm_btn input[type=submit]:hover {
 	box-shadow: none;
 	}
 	.add_plus input[type=button]{
-	padding: 0px;
+	  padding: 0px;
     background-color: transparent;
     box-shadow: none;
     text-transform: uppercase;
@@ -1377,7 +1472,14 @@ span.project_details input[type=text]{
     font-weight: bolder;
     border: 0px;
     color: #545454;
-	float: right;
+	  right: 0px;
+    outline: none;
+    position:absolute;
+    &:active,
+    &:focus,
+    &:hover{
+      outline: none;
+    }
 }
 .add_plus .file-input{
   display: none;
@@ -1424,6 +1526,8 @@ div.wpcf7-validation-errors{
 	.mail_form { 
 	.subm_btn {
 	padding:0;
+  float: left;
+  width: 100%;
 	}	
 	}
 }
@@ -2163,7 +2267,7 @@ body {
     left: -16px;
   }
   .flik-timeline-10{
-    color: #959595;
+    color: #949494;
     position: relative;
     margin: 50px 0;
     border-left: 4px solid #23c0f1;
@@ -2174,6 +2278,12 @@ body {
     &:after,
     &:before{
       display: none;
+    }
+    .content-title{
+      text-align: left;
+      color: #8f8f8f;
+      font-size: 20px;
+      font-weight: 500;
     }
   }
   .flik-timeline-10:before, .flik-timeline-10:after {
@@ -2270,12 +2380,12 @@ body {
   }
   .flik-timeline-10 li.active .flik-timeline-content{
     border: none;
-    color: #959595;
+    color: #949494;
     padding: 0;
     margin: 0;
     right: 0;
     .content-main{
-      color: #959595;
+      color: #949494;
       font-size: 14px;
       line-height: 1.6;
       font-family: Montserrat,Arial,sans-serif;
@@ -2323,7 +2433,7 @@ body {
   }
   @media screen and (max-width: 768px){
     .flik-timeline-10{
-      color: #959595;
+      color: #949494;
       position: relative;
       margin: 50px 0;
       border-left: 4px solid #23c0f1;

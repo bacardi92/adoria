@@ -5,7 +5,7 @@
 	$logo = (isset($adoria['header_logo']['url'])? $adoria['header_logo']['url'] : ''); 
 	$button_text = (isset($adoria['header_additional_button_text'])? $adoria['header_additional_button_text'] : null);
 	$button_link = (isset($adoria['header_additional_button_link'])? $adoria['header_additional_button_link'] : null);
-
+	extract($adoria);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -30,6 +30,26 @@
 		?>
 		<div id="backToTop"><i class="fa fa-angle-up"></i> <span>Back to top</span></div>
 		<header class="container-fluid">
+			<div class="blackLine">
+				<div class="container"> 
+					<div class="topPhone topContact">
+						<i class="fa fa-phone"></i>
+						<?php foreach ($phone_contact_footer as $phone): extract($phone)  ?>
+							<a class="ga-event" target=_blank rel="nofollow" href="skype:<?php echo str_replace(" ", "", $phone_contact_footer_link); ?>?call"><?php echo $phone_contact_footer_link; ?></a>
+
+						<?php endforeach; ?>
+					</div>
+					<div class="topMail topContact">
+						<i class="fa fa-envelope"></i>
+						<?php foreach ($email_contact_footer as $email): extract($email)  ?>
+
+							<a href="mailto:<?php echo $email_contact_footer_link; ?>" target=_blank rel="nofollow" class="ga-event"><?php echo $email_contact_footer_link; ?></a>
+
+						<?php endforeach; ?>
+					</div>
+				</div>
+
+			</div>
 			<nav class="navbar container navbar-default" role="navigation">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">

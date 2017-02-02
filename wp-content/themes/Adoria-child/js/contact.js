@@ -21,5 +21,6 @@ jQuery(document).ready(function($){
 	$('#attachedFile').change(function() {
         var filename = $('#attachedFile')[0].files[0];
         $('.fileStatus').html(filename.name);
+        $('.addFile').attr('value', '✔');
     });
 });

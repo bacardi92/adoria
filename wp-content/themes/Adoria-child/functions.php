@@ -256,17 +256,17 @@ function adoria_slider_content($id){
         }
 		$html .= '<div class="item carousel-home-item '.(($k == 0)? "active" : "" ).'" '.((isset($background))? $background : "").'>
 					<div class="row">
-						<div class="col-xs-12 col-sm-6 col-md-7 col-lg-7">
+						<div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 sliderContentWrapper">
 							<h3 class="slideTitle">'.$title.'</h3>
 							<p class="slideContent">'.$description.'</p>
 							'.$custom.'
 							<div>
-								<a href="'.$url.'" class="btn btn-link">Learn more ></a>
+								<a href="'.$url.'" class="btn btn-link btn-learn-more">Learn more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-md-5 col-lg-5">
 							<img class="img-responsive" src="'.$image.'" alt="">
-                            <a href="'.$url.'" class="slideLink"></a>
+                            <a href="'.$url.'" class="slideLink" target=_blank rel="nofollow"></a>
 						</div>
 					</div>
 				</div>';
@@ -484,6 +484,15 @@ function the_breadcrumb() {
         echo 'Home';
     }
     echo "</div>";
+}
+
+add_action('wp_loaded', 'buffer_start');    function buffer_start() { ob_start("myy_callback"); }
+add_action('shutdown', 'buffer_end');       function buffer_end()   { ob_end_flush(); }
+
+function myy_callback($buffer) {
+  // modify buffer here, and then return the updated code
+  $buffer = str_replace('http://adoriasoft.dev.adoriasoft.org','http://adoriasoft.loc',$buffer);
+  return $buffer;
 }
 
 add_filter('the_content', 'lazyLoadImg');
